@@ -92,12 +92,15 @@ export default {
   padding: 20px;
   box-sizing: border-box;
   position: relative;
-  height: 240px;
+  height: 266px;
   width: 100%;
+  box-shadow:0px 0px  5px 2px #e1e1e1;
+  border-radius: 8px;
+
 }
 .video-player-box {
   width: 100%;
-  height: 200px;
+  height: 180px;
 }
 
 .video-bg-fix {
