@@ -1,10 +1,12 @@
 <template>
+
+<!-- 评价 -->
   <div class="content">
     <div>
       老师说：
       <span class="tea-commment">{{teatcher}}</span>
     </div>
-    <div v-for="(com, index) in currrentList" :key="index">
+    <div v-for="(com, index) in comments" :key="index">
       <ComItem :data="com" :key="index" />
     </div>
 
@@ -17,11 +19,14 @@
 
 <script>
 import ComItem from "./comment-item";
+import {mapState} from 'vuex';
+
 export default {
   components: {
     ComItem
   },
   computed: {
+    ...mapState('commentStore',['comments']),
     currrentList() {
       if (this.showMore) return this.list;
       return this.list.slice(0, 3);
@@ -31,32 +36,6 @@ export default {
     return {
       showMore: false,
       teatcher: "小明很用心，这节课表现很好，下次继续努力！",
-      list: [
-        {
-          from: "小明",
-          content: "我一定会督促孩子好好学习的。"
-        },
-        {
-          from: "小明",
-          content: "我一定会督促孩子好好学习的。"
-        },
-        {
-          from: "小明",
-          content: "我一定会督促孩子好好学习的。"
-        },
-        {
-          from: "小明",
-          content: "我一定会督促孩子好好学习的。"
-        },
-        {
-          from: "小明",
-          content: "我一定会督促孩子好好学习的。"
-        },
-        {
-          from: "小明",
-          content: "我一定会督促孩子好好学习的。"
-        }
-      ]
     };
   },
   methods: {
@@ -85,7 +64,7 @@ export default {
 }
 
 .btn-more {
-  margin-top: 20px;
+  margin-top: 10px;
   text-align: center;
 }
 </style>

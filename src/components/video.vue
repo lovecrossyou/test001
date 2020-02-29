@@ -47,7 +47,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .title {
-  font-size: 36px;
+  font-size: 20px;
   font-weight: bold;
   text-align: center;
 }
