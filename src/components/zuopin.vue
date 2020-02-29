@@ -56,6 +56,7 @@ export default {
   },
   data() {
     return {
+      option:,
       // video
       playerOptions: {
         //播放速度
