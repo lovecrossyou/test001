@@ -15,7 +15,7 @@
       <!-- 视频 -->
       <div class="video-bg-fix">
         <div class="option-fix">
-          <el-rate :colors="['#99A9BF', '#F7BA2A', '#FF9900']"></el-rate>
+          <el-rate></el-rate>
         </div>
 
         <div class="do-comment">
@@ -94,9 +94,8 @@ export default {
   position: relative;
   height: 266px;
   width: 100%;
-  box-shadow:0px 0px  5px 2px #e1e1e1;
+  box-shadow: 0px 0px 2px 1px #e1e1e1;
   border-radius: 8px;
-
 }
 .video-player-box {
   width: 100%;
