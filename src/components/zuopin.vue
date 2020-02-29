@@ -26,7 +26,8 @@
         <!-- 评分 -->
         <el-rate v-model="value" show-text class="grade"></el-rate>
 
-        
+
+        <v-chart :option="option"></v-chart>
       </div>
       <!-- video -->
       <!-- 评论 -->
