@@ -26,8 +26,9 @@
         <!-- 评分 -->
         <el-rate v-model="value" show-text class="grade"></el-rate>
 
-
-        <v-chart :option="option"></v-chart>
+        <div class="chart-box">
+          <MyChart/>
+        </div>
       </div>
       <!-- video -->
       <!-- 评论 -->
@@ -45,18 +46,17 @@
 <script>
 import "video.js/dist/video-js.css";
 import { mapActions } from 'vuex';
-import ECharts from 'vue-echarts/components/ECharts'
+import MyChart from './echart';
 
 // import { videoPlayer } from "vue-video-player";
 
 export default {
   components: {
     // videoPlayer
-    'v-chart': ECharts
+    MyChart
   },
   data() {
     return {
-      option:,
       // video
       playerOptions: {
         //播放速度
@@ -137,7 +137,7 @@ export default {
       })
         .then(({ value }) => {
           this.addComment({
-            from:'小王',
+            from:'小王家长',
             content: value
           })
           // this.$message({
@@ -154,6 +154,7 @@ export default {
     }
   }
 };
+
 </script>
 
 <style scoped>
@@ -161,7 +162,7 @@ export default {
   padding: 20px;
   box-sizing: border-box;
   position: relative;
-  height: 286px;
+  height: 320px;
   width: 100%;
   box-shadow: 0px 0px 2px 1px #e1e1e1;
   border-radius: 8px;
@@ -174,7 +175,7 @@ export default {
 
 .el-button.is-round {
   padding: 5px 20px;
-  margin-top: 5px;
+  margin-top: 20px;
 }
 
 .video-bg-fix {
@@ -228,7 +229,10 @@ export default {
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
   margin-right: 4px;
 }
-
+.video-player >>> .vjs-big-play-button{
+  left: 120px;
+  top: 65px;
+}
 .advertising:hover {
   display: block;
 }
@@ -242,9 +246,18 @@ export default {
 
 .grade {
   position: relative;
+  left:95px;
   right: 0px;
-  top: 0;
+  top: 10px;
   height: 50px;
+}
+
+.chart-box{
+  position: absolute;
+  bottom: 5px;
+  right: 10px;
+  height: 100px;
+  width: 100px;
 }
 </style>
 

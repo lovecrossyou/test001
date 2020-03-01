@@ -10,7 +10,7 @@
       <ComItem :data="com" :key="index" />
     </div>
 
-    <div class="btn-more" v-on:click="show_More">
+    <div class="btn-more" @click="show_More">
       <i v-show="false===showMore" class="el-icon-caret-bottom"></i>
       <i v-show="true===showMore" class="el-icon-caret-top"></i>
     </div>
@@ -28,8 +28,8 @@ export default {
   computed: {
     ...mapState('commentStore',['comments']),
     currrentList() {
-      if (this.showMore) return this.list;
-      return this.list.slice(0, 3);
+      if (this.showMore) return this.comments;
+      return this.comments.slice(0, 3);
     }
   },
   data() {
